@@ -1,13 +1,8 @@
 #!/bin/bash
 
 
-echo "mainscript for launch all script"
-
 #get current directory
 current_dir=$(pwd)
-
-echo "create log directory"
-mkdir $current_dir/logs
 
 function launch_first_script(){
     python $current_dir/scripts/1-prime_number.py 2>&1 | tee $current_dir/logs/1-prime_number.log 
@@ -25,14 +20,58 @@ function launch_third_script(){
     source $current_dir/scripts/3-list_python_process.sh  | tee $current_dir/logs/3-list_python_process.log 
 }
 
-case $1 in 
---1)
+function launch_all_scripts(){
     launch_first_script
-    ;;
---2)
     launch_second_script
-    ;;
---3)
-    launch_third_script 
-esac
+    launch_third_script
+}
 
+
+function show_help(){
+    echo -e "Usage: ./main.sh [option] \n"
+
+    echo "[option]: "
+    echo -e "\t--h for print this help"
+    echo -e "\t--1 for run first script"
+    echo -e "\t--2 for run second script"
+    echo -e "\t--3 for run  third script"
+    
+    
+}
+
+
+
+if [[ $1 = "" ]]
+then 
+    echo -e "Bad usage\n"
+    show_help
+else
+
+        if [[ -d $current_dir/logs ]]
+        then
+            echo ""
+        else 
+            mkdir $current_dir/logs
+            echo "create log directory"
+        fi 
+
+        case $1 in 
+        --h)
+            show_help
+            ;;
+        --1)
+            launch_first_script
+            ;;
+        --2)
+            launch_second_script
+            ;;
+        --3)
+            launch_third_script 
+            ;;
+        --a)
+            launch_first_script
+            launch_second_script
+            launch_third_script
+            ;;
+        esac
+fi
