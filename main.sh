@@ -32,10 +32,10 @@ function show_help(){
 
     echo "[option]: "
     echo -e "\t--h for print this help"
-    echo -e "\t--1 for run first script"
-    echo -e "\t--2 for run second script"
-    echo -e "\t--3 for run  third script"
-    
+    echo -e "\t--1 for show the primes numbers between 1 and 1000000"
+    echo -e "\t--2 for clone git repository"
+    echo -e "\t--3 for show all processes python in current os"
+    echo -e "\t--a for launch all the scripts"
     
 }
 
@@ -73,5 +73,9 @@ else
             launch_second_script
             launch_third_script
             ;;
+        *)
+            echo "No option for it"
+            show_help
+        ;;
         esac
 fi
