@@ -73,5 +73,9 @@ else
             launch_second_script
             launch_third_script
             ;;
+        *)
+            echo "No option for it"
+            show_help
+        ;;
         esac
 fi
