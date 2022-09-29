@@ -27,6 +27,8 @@ Pour tester notre TP; il faudrait avoir à sa disposition les outils suivants:
 NB: les textes précedents le > specifient la commande à utiliser pour retourner la version installée
 
 
+
+
 ## Usage du script
 
 Pour lancer les scripts; il suffira de suvire les étapes suivantes
@@ -39,5 +41,19 @@ Pour lancer les scripts; il suffira de suvire les étapes suivantes
 
 3. Lancer le script main.sh --h pour obtenir de l'aide
 	> $ ./main.sh --h
+
+
+NB: pour chaque test de scripts vous pouriez retrouver les logs d'exécution dans le repertoires **logs** situé à la racine de notre projet
+
+
+##Worflow
+Pour le projet, nous avons considéré l'ensemble des tâches comme le livrable final. Et les tâches spécifiques comme des features à livrer.
+Ainsi; après avoir travaillé sur ces features nous nous sommes convenus de faire des validations de nos travaux.
+
+C'est dans ce sciage que nous avons optés pour l'usage du workflow **feature branch + merge request**
+
+
+
+
 
 
